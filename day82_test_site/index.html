@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <script src="https://kit.fontawesome.com/8c1bc62bc7.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@100;400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+    <section class="home">
+        <nav>
+         <div class="logo">
+            Kyle Han
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">My Work</a></li>
+            <li><a href="#">Contact Me</a></li>
+            <div class="mode">
+            <input type="checkbox" class="checkbox" id="chk">
+            <label for="chk" class="label">
+               <i class="fas fa-moon"></i>
+               <i class="fas fa-sun"></i>
+               <div class="ball"></div>
+            </label>
+            </div>
+         </ul>
+      </nav>
+        <script>
+            const check = document.getElementById('chk');
+
+            check.addEventListener('change', () => {
+	        document.body.classList.toggle('dark');
+            });
+        </script>
+
+      <div class="first-page">
+      <section class="scene">
+            <div class="sun"></div>
+            <div class="intro-text">
+               <h1 class="intro-title">Kyle Han</h1>
+               <div class="subheading">
+                I am a
+                <div class="dropping-texts">
+                  <div class="rotate">Student.</div>
+                  <div class="rotate">Athlete.</div>
+                  <div class="rotate">Coder.</div>
+                  <div class="rotate">Learner.</div>
+                </div>
+                </div>
+
+            </div>
+            <div class="bg">
+               <img src="static/police_car.gif" class="car1">
+               <img src="static/police_car.gif" class="car2">
+            </div>
+      </section>
+      </div>
+
+
+    </section>
+
+    <section class="about">
+        <h2 class="about-label">About Me.</h2>
+
+        <div class="about-text">
+            <div class="topcorner"><br></div>
+            <p>
+                Hi, my name is Kyle Han. I am a junior attending Beckman High School in Irvine, California.
+                I will be part of the graduating class of 2024.
+                In my free time, I like to play hangout with the cutest golden retiever, Kiwi.
+                In the future, I intend on studying computer science.
+            </p>
+            <p>
+                Tennis has been a big part of my life for quite a while now. I started playing when I was 10,
+                coming up on 7 years as a hobby. Whenever stress knocks at my door, tennis has always been my go-to
+                option to clear my mind. I made the Beckman tennis team as a freshmen and intend to play through
+                my entire high school journey.
+            </p>
+            <p>
+                Aside from school work, a large chunk of my time is devoted to coding.
+                For majority of my life, I had no idea what I wanted to do.
+                Humanities? Medicine? Law? I had no clue . . . until I discovered code.
+                Coding has taught me so much about problem-solving. Can't wake up?
+                Build your own alarm clock. The power of code is limitless. Coding has also
+                led me to join the Beckman robotics team where we apply the same problem-solving
+                aspects in a competition environment.
+            </p>
+            <div class="bottomcorner"><br></div>
+        </div>
+        <div class="about-images">
+            <img class="pic" id="cif" src="static/cif.jpg">
+            <img class="pic" id="coding" src="static/coding.png">
+            <img class="pic" id="kiwi" src="static/kiwi.jpg">
+<!--            <img class="pic" id="tennis" src="static/tennis-water.jpg">-->
+
+        </div>
+
+
+
+    </section>
+    <section class="work">
+        <h2 class="work-label">My Work.</h2>
+
+
+    </section>
+    <section class="contact">
+
+      <form onsubmit="sendEmail(); reset(); return false;">
+        <h3>Contact Me!</h3>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+
+        <textarea id="message" rows="4" placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    <script src="  https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "kyleh1104@gmail.com",
+                Password : "0187A56812FCBF722B0C4A1ACB5996669C9F",
+                To : 'kyleh1104@gmail.com',
+                From : 'kyleh1104@gmail.com',
+                Subject : "Someone Emailed You!",
+                Body : "Name: " + document.getElementById("name").value
+                        + "<br> Email: " + document.getElementById("email").value
+                        + "<br> Message: " + document.getElementById("message").value
+            }).then(
+              message => alert(message)
+            );
+        }
+    </script>
+
+
+    </section>
+    <section class="footer">
+        <a class="footer-link" href="https://www.instagram.com/han.k04/">Instagram <i class="fa-brands fa-instagram"></i></a>
+        <a class="footer-link" href="https://github.com/savagesausage04">Github <i class="fa-brands fa-github"></i></a>
+        <a class="footer-link" href="https://open.spotify.com/user/mkmjol1l8253h5e17fysdcdep?si=JbCAgvmaTLCsGVUTK0YP2w">Spotify <i class="fa-brands fa-spotify"></i></a>
+        <p class="copyright">© 2022 Kyle Han.</p>
+    </section>
+
+</body>
+</html>
